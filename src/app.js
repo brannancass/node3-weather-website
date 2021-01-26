@@ -49,7 +49,7 @@ app.get('/weather', (req, res) => {
             })
         }
         else {
-            forecast(latitude, longitude, (error, { temp, feelsLike, weather } = {}) => {
+            forecast(latitude, longitude, (error, { temp, feelsLike, weather, icon } = {}) => {
                 if (error) {
                     return res.send({
                         error: 'Could not retrieve weather info'
@@ -60,7 +60,8 @@ app.get('/weather', (req, res) => {
                         address: req.query.address,
                         temp: temp,
                         feelsLike: feelsLike,
-                        weather: weather
+                        weather: weather,
+                        icon: icon
                     })
                 }
             })

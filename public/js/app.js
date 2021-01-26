@@ -20,7 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
                 }
                 else {
                     messageOne.textContent = ""
-                    messageTwo.textContent = `Weather report for ${data.address}\nThe temperature is ${data.temp}. Feels like ${data.feelsLike}. Weather is ${data.weather}.`
+                    messageTwo.innerHTML = `<div><img src="${data.icon}"></div><div>Weather report for ${data.address}</div><div>The temperature is ${data.temp}. Feels like ${data.feelsLike}. Weather is ${data.weather}.</div>`
                 }
             }, 1000)
         })
